@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     justifyContent: "space-around",
   },
   title: {
-    fontFamily: "OpenSans-Bold",
+    fontFamily: "Oswald-Bold",
     fontSize: 18,
     textAlign: "center",
   },
@@ -28,7 +28,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
   detailText: {
-    fontFamily: "OpenSans-Regular",
+    fontFamily: "Oswald-Regular",
     fontSize: 14,
   },
   image: {

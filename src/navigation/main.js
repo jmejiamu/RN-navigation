@@ -22,7 +22,7 @@ const MainNavigator = () => {
         },
         headerTintColor: isAndroid ? colors.white : colors.black,
         headerTitleStyle: {
-          fontFamily: "OpenSans-Bold",
+          fontFamily: "Oswald-Bold",
         },
         title: "Landscape",
       }}

@@ -5,9 +5,9 @@ import Root from "./src";
 
 const App = () => {
   const [loaded] = useFonts({
-    "OpenSans-Bold": require("./assets/fonts/OpenSans-Bold.ttf"),
-    "OpenSans-BoldItalic": require("./assets/fonts/OpenSans-BoldItalic.ttf"),
-    "OpenSans-Regular": require("./assets/fonts/OpenSans-Regular.ttf"),
+    "Oswald-Bold": require("./assets/fonts/Oswald-Bold.ttf"),
+    "Oswald-Regular": require("./assets/fonts/Oswald-Regular.ttf"),
+    "Oswald-Medium": require("./assets/fonts/Oswald-Medium.ttf"),
   });
   if (!loaded) {
     return <ActivityIndicator />;

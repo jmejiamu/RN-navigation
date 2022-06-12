@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
     padding: 10,
   },
   title: {
-    fontFamily: "OpenSans-Bold",
+    fontFamily: "Oswald-Bold",
   },
   image: {
     width: 100,
