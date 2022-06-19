@@ -8,6 +8,7 @@ const App = () => {
     "Oswald-Bold": require("./assets/fonts/Oswald-Bold.ttf"),
     "Oswald-Regular": require("./assets/fonts/Oswald-Regular.ttf"),
     "Oswald-Medium": require("./assets/fonts/Oswald-Medium.ttf"),
+    "Oswald-ExtraLight": require("./assets/fonts/Oswald-ExtraLight.ttf"),
   });
   if (!loaded) {
     return <ActivityIndicator />;
