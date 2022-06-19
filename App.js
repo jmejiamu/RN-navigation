@@ -1,7 +1,9 @@
 import { useFonts } from "expo-font";
 
 import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
+import { Provider } from "react-redux";
 import Root from "./src";
+import store from "./src/store";
 
 const App = () => {
   const [loaded] = useFonts({
@@ -14,7 +16,11 @@ const App = () => {
     return <ActivityIndicator />;
   }
 
-  return <Root />;
+  return (
+    <Provider store={store}>
+      <Root />
+    </Provider>
+  );
 };
 
 export default App;
