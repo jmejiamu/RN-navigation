@@ -9,6 +9,9 @@ import {
 } from "../screens/index";
 import { isAndroid, isIOS } from "../constants/utils";
 import { colors } from "../constants/theme";
+import { TouchableOpacity } from "react-native";
+import IonicIcons from "@expo/vector-icons/Ionicons";
+import NewLandscapeScreen from "../screens/new-landscape";
 
 const Stack = createNativeStackNavigator();
 
@@ -38,8 +41,27 @@ const MainNavigator = () => {
       <Stack.Screen
         name="LandScapeDetailsScreen"
         component={LandScapeDetailsScreen}
-        options={({ route }) => ({
+        options={({ route, navigation }) => ({
           title: route.params.name,
+          headerRight: () => (
+            <TouchableOpacity
+              onPress={() => navigation.navigate("NewLandscapeScreen")}
+            >
+              <IonicIcons
+                name="add-circle-outline"
+                size={30}
+                color={colors.black}
+              />
+            </TouchableOpacity>
+          ),
+        })}
+      />
+
+      <Stack.Screen
+        name="NewLandscapeScreen"
+        component={NewLandscapeScreen}
+        options={({ route }) => ({
+          title: route?.params?.name,
         })}
       />
     </Stack.Navigator>
