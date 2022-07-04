@@ -10,7 +10,7 @@ import {
 import { useDispatch } from "react-redux";
 import { ImageSelector } from "../../components/index";
 import { colors } from "../../constants/theme";
-// import { savePlace } from "../store/place.slices";
+import { savePlace } from "../../store/action/index";
 
 const styles = StyleSheet.create({
   container: {
@@ -40,8 +40,9 @@ const NewLandscapeScreen = ({ navigation }) => {
   const handleTitleChange = (text) => setTitle(text);
 
   const handleSave = () => {
-    dispatch(savePlace(title, image));
-    navigation.navigate("Place");
+    let id = Date.now();
+    dispatch(savePlace(id, title, image));
+    navigation.navigate("LandScapeScreen");
   };
 
   return (
