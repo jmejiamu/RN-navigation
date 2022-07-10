@@ -5,6 +5,7 @@ import * as Location from "expo-location";
 import { MapPreview } from "../index";
 
 import { styles } from "./styles";
+import { colors } from "../../constants/theme";
 
 const LocationSelector = ({ onLocation }) => {
   const navigation = useNavigation();

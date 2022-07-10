@@ -9,7 +9,7 @@ import { colors } from "../../constants/theme/index";
 const PlaceDetailScreen = ({ navigation, route }) => {
   const { placeId } = route.params;
   const place = useSelector((state) =>
-    state.place.places.find((place) => place.id === placeId)
+    state.addLandscape.landscape.find((place) => place.id === placeId)
   );
 
   return (

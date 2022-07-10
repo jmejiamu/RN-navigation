@@ -9,8 +9,9 @@ import {
 } from "react-native";
 import { useDispatch } from "react-redux";
 import { ImageSelector, LocationSelector } from "../../components/index";
-import { savePlace } from "../store/place.slices";
+import { savePlace } from "../../store/action/index";
 import { colors } from "../../constants/theme/index";
+import { styles } from "./styles";
 
 const NewPlaceSreen = ({ navigation }) => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const NewPlaceSreen = ({ navigation }) => {
 
   const handleSave = () => {
     dispatch(savePlace(title, image, location));
-    navigation.navigate("Place");
+    navigation.navigate("LandScapeDetailsScreen");
   };
 
   const onLocationPicked = (location) => {

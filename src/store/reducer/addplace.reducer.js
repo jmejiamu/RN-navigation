@@ -1,8 +1,7 @@
-import { landscapeTypes } from "../types/index";
+import { landscapeTypes, loadAddressTypes } from "../types/index";
 
 const { ADD_LANDSCAPE } = landscapeTypes;
-const SIGN_UP = "SIGN_UP";
-const SIGN_IN = "SIGN_IN";
+const { LOAD_ADDRESS } = loadAddressTypes;
 
 const initialState = {
   landscape: [],
@@ -15,7 +14,10 @@ const AddLandscapeReducer = (state = initialState, action) => {
         ...state,
         landscape: [...state.landscape, { ...action.save }],
       };
-
+    case LOAD_ADDRESS:
+      return {
+        landscape: action.address,
+      };
     default:
       return state;
   }

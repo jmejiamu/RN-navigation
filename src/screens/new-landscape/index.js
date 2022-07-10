@@ -8,7 +8,7 @@ import {
   Button,
 } from "react-native";
 import { useDispatch } from "react-redux";
-import { ImageSelector } from "../../components/index";
+import { ImageSelector, LocationSelector } from "../../components/index";
 import { colors } from "../../constants/theme";
 import { savePlace } from "../../store/action/index";
 
@@ -37,12 +37,16 @@ const NewLandscapeScreen = ({ navigation }) => {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState();
 
+  const [location, setLocation] = useState();
+
   const handleTitleChange = (text) => setTitle(text);
 
   const handleSave = () => {
-    let id = Date.now();
-    dispatch(savePlace(id, title, image));
+    dispatch(savePlace(title, image, location));
     navigation.navigate("LandScapeScreen");
+  };
+  const onLocationPicked = (location) => {
+    setLocation(location);
   };
 
   return (
@@ -59,6 +63,7 @@ const NewLandscapeScreen = ({ navigation }) => {
             setImage(image);
           }}
         />
+        <LocationSelector onLocation={onLocationPicked} />
         <Button
           title="Grabar Dirección"
           color={colors.primary}

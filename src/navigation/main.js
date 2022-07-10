@@ -6,6 +6,10 @@ import {
   LandScapeScreen,
   LandScapeDetailsScreen,
   DetailsScreen,
+  MapScreen,
+  NewPlaceSreen,
+  PlaceDetailScreen,
+  PlaceListScreen,
 } from "../screens/index";
 import { isAndroid, isIOS } from "../constants/utils";
 import { colors } from "../constants/theme";
@@ -35,14 +39,14 @@ const MainNavigator = () => {
         name="DetailsScreen"
         component={DetailsScreen}
         options={({ route }) => ({
-          title: route.params.name,
+          title: route?.params?.name,
         })}
       />
       <Stack.Screen
         name="LandScapeDetailsScreen"
-        component={LandScapeDetailsScreen}
+        component={PlaceListScreen}
         options={({ route, navigation }) => ({
-          title: route.params.name,
+          title: route?.params?.name,
           headerRight: () => (
             <TouchableOpacity
               onPress={() => navigation.navigate("NewLandscapeScreen")}
@@ -63,6 +67,21 @@ const MainNavigator = () => {
         options={({ route }) => ({
           title: route?.params?.name,
         })}
+      />
+      <Stack.Screen
+        name="PlaceDetail"
+        component={PlaceDetailScreen}
+        options={{ title: "Detalle de Dirección" }}
+      />
+      <Stack.Screen
+        name="NewPlace"
+        component={NewPlaceSreen}
+        options={{ title: "Nueva Dirección" }}
+      />
+      <Stack.Screen
+        name="Map"
+        component={MapScreen}
+        options={{ title: "Mapa" }}
       />
     </Stack.Navigator>
   );

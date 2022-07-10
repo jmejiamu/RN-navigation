@@ -18,7 +18,6 @@ export const signup = (email, password) => {
       });
 
       const result = await response.json();
-      console.log(result);
 
       dispatch({
         type: SIGN_UP,
@@ -47,7 +46,6 @@ export const signin = (email, password) => {
       });
 
       const result = await response.json();
-      console.log(result);
 
       dispatch({
         type: SIGN_IN,
