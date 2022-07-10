@@ -10,8 +10,9 @@ export const saveImage = (id, title, image) => {
   };
 };
 
-export const savePlace = (id, title, image) => {
+export const savePlace = (id, title, image, coords) => {
   return async (dispatch) => {
+    const response = await fetch(URL_GEOCODING(coords.lat, coords.lng));
     const fileName = image.split("/").pop();
     const Path = FileSystem.documentDirectory + fileName;
 

@@ -11,10 +11,6 @@ const LandScapeScreen = ({ navigation, route }) => {
 
   const landscape = useSelector((state) => state.category.categories);
   const savedData = useSelector((state) => state.addLandscape);
-  console.log(
-    "🚀 ~ file: index.js ~ line 14 ~ LandScapeScreen ~ savedData",
-    savedData
-  );
 
   const onHandlerSelectedLandScape = (item) => {
     dispatch(selectCategory(item.id));

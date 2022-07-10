@@ -8,8 +8,8 @@ const LandScapeItem = ({ item, onSelected }) => {
       <TouchableOpacity
         style={{
           ...styles.item,
-          borderWidth: 4,
-          borderColor: item.color,
+          borderBottomWidth: 2,
+          borderBottomColor: item.color,
         }}
         onPress={() => onSelected(item)}
       >
