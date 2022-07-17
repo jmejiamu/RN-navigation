@@ -11,6 +11,7 @@ import { useDispatch } from "react-redux";
 import { colors } from "../../constants/theme";
 import { styles } from "./styles";
 import { signup, signin } from "../../store/action/index";
+import { CustomButton, CustomInput } from "../../components";
 
 const Auth = () => {
   const dispatch = useDispatch();
@@ -50,7 +51,6 @@ const Auth = () => {
         <Text style={styles.label}>Email</Text>
         <TextInput
           style={styles.input}
-          placeholder="Email address"
           placeholderTextColor={colors.gray}
           keyboardType="email-address"
           autoCapitalize="none"
@@ -61,7 +61,6 @@ const Auth = () => {
         <Text style={styles.label}>Password</Text>
         <TextInput
           style={styles.input}
-          placeholder="Password"
           placeholderTextColor={colors.gray}
           secureTextEntry
           autoCapitalize="none"
@@ -70,7 +69,7 @@ const Auth = () => {
           onChangeText={(text) => onChangeText(text, "password")}
         />
         <View style={styles.button}>
-          <Button
+          <CustomButton
             color={colors.primary}
             title={buttonText}
             onPress={() => handlerSubmit()}

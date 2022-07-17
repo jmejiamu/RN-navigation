@@ -7,4 +7,5 @@ export const colors = {
   white: "#ffffff",
   black: "#000000",
   gray: "#fdfdfd",
+  btnColor: "#701e32",
 };
